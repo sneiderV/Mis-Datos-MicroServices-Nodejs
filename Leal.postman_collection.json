@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "6c40062e-459d-4161-88f8-84b2c051ae94",
+		"name": "Leal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Usuario",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"esneider\",\r\n    \"lastname\": \"velandia\",\r\n    \"birth_date\": \"1994-07-24\",\r\n    \"email\": \"evelandia@leal.com\",\r\n    \"password\": \"qwerty\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "aaa",
+									"value": "sssss",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"evelandia@leal.com\",\r\n   \"password\": \"qwerty\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Transaction",
+			"item": [
+				{
+					"name": "Create transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZDBjYzZkZTNjOGRiNWVjODc5NjBjODRhNDIyOWNlNTgiLCJjcmVhdGVkQXQiOjE1OTM0Mzk3NDQsImV4cGlyZWRBdCI6MTU5MzQ0MDA0NH0.WknKOinP6lsr0O96wj35wGnPXTKj6Xhc4K5WeWg_xVA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"evelandia@leal.com\", \r\n    \"value\": 100000, \r\n    \"points\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/transaction/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"transaction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Business transactions",
+			"item": [
+				{
+					"name": "Inactivate transaction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZDBjYzZkZTNjOGRiNWVjODc5NjBjODRhNDIyOWNlNTgiLCJjcmVhdGVkQXQiOjE1OTM0Mzg4NjQsImV4cGlyZWRBdCI6MTU5MzQzOTE2NH0.GjtXOsQ8hE00UAvmuodFZBR4E3fpufSFJcCLQUgWm8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"transaction_id\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3007/api/business-transaction/inactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3007",
+							"path": [
+								"api",
+								"business-transaction",
+								"inactivate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Historic",
+			"item": [
+				{
+					"name": "Transaction History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZDBjYzZkZTNjOGRiNWVjODc5NjBjODRhNDIyOWNlNTgiLCJjcmVhdGVkQXQiOjE1OTM0Mzg4NjQsImV4cGlyZWRBdCI6MTU5MzQzOTE2NH0.GjtXOsQ8hE00UAvmuodFZBR4E3fpufSFJcCLQUgWm8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"evelandia@leal.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/historic/transactionHistory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"historic",
+								"transactionHistory"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Points",
+			"item": [
+				{
+					"name": "Points by user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZDBjYzZkZTNjOGRiNWVjODc5NjBjODRhNDIyOWNlNTgiLCJjcmVhdGVkQXQiOjE1OTM0MzkxOTQsImV4cGlyZWRBdCI6MTU5MzQzOTQ5NH0.kzZNULTvfgIVIzXB89WYmZo3-CNGmG0HZ8tDC9Asxxw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"evelandia@leal.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3004/api/points/pointsByUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"api",
+								"points",
+								"pointsByUser"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "API Document",
+			"item": [
+				{
+					"name": "Export transactions to excel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZDBjYzZkZTNjOGRiNWVjODc5NjBjODRhNDIyOWNlNTgiLCJjcmVhdGVkQXQiOjE1OTM0NDAwNjcsImV4cGlyZWRBdCI6MTU5MzQ0MDM2N30.tQq6XlcT0GttSxyMPsgJvdI9J82VWXrnqv01uOO1504",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"evelandia@leal.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/document/exportTransactionToExcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"document",
+								"exportTransactionToExcel"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
