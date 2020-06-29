@@ -1,0 +1,24 @@
+{
+  "name": "micro-user",
+  "version": "1.0.0",
+  "description": "microservice",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Esneider Velandia Gonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "md5": "^2.2.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "yup": "^0.29.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
